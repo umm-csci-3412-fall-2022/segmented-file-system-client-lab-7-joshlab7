@@ -4,7 +4,7 @@ public class Packet{
 
 	public byte fileID;
 
-	public int getFileID(){
+	public byte getFileID(){
 		return fileID;
 	}
 

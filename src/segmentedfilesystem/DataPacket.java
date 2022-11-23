@@ -1,8 +1,11 @@
 package segmentedfilesystem;
 
+import java.util.ArrayList;
+
 public class DataPacket extends Packet {
     public byte[] body;
     public int positionNumber;
+    public boolean last;
 
     public DataPacket() {}
   
@@ -14,6 +17,10 @@ public class DataPacket extends Packet {
         return body;
     }
 
+    public boolean getIfLast() {
+        return last;
+    }
+
     public void appointBody(byte[] body) {
         this.body = body;
     }
@@ -21,5 +28,17 @@ public class DataPacket extends Packet {
     public void appointPositionNumber(int number) {
         positionNumber = number;
     }
+
+    public void appointIfLast(boolean last) {
+        this.last = last;
+    }
+
+    public ArrayList<Byte> getBodyAsList() {
+        ArrayList<Byte> output = new ArrayList<Byte>();
+        for (byte b: body) {
+          output.add(b);
+        }
+        return output;
+      }
 
 }
